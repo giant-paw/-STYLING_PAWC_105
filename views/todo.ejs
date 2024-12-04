@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            background-color: #f0f8ff; /* Light blue background */
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            color: #007bff; /* Bootstrap primary blue */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Todo List Card */
+        .container {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .list-group-item {
+            border: none;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-group-item span.completed {
+            text-decoration: line-through;
+            color: #6c757d; /* Gray color for completed tasks */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+        }
+
+        /* Modal Customization */
+        .modal-content {
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .modal-title {
+            font-weight: bold;
+        }
+
+        .modal-body {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Todo List</h1>
+
+        <!-- Form to Add New Todo -->
+        <form id="addTodoForm" class="my-4">
+            <div class="input-group">
+                <input type="text" id="newTask" class="form-control" placeholder="Add a new task..." required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- List of Todos -->
+        <ul id="todoList" class="list-group">
+            <% todos.forEach(todo=> { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="<%= todo.completed ? 'completed' : '' %>">
+                        <%= todo.task %>
+                    </span>
+                    <div>
+                        <button class="btn btn-sm btn-success mr-2 editBtn" data-id="<%= todo.id %>">Edit</button>
+                        <button class="btn btn-sm btn-danger deleteBtn" data-id="<%= todo.id %>">Delete</button>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>
+
+        <!-- Edit Todo Modal -->
+        <div id="editModal" class="modal fade" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">Edit Todo</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editTodoForm">
+                            <div class="form-group">
+                                <label for="editTask">Task</label>
+                                <input type="text" id="editTask" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

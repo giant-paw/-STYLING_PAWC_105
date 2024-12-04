@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9; /* Soft green background */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-card {
+            background-color: #ffffff; /* White card background */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2e7d32; /* Dark green for the title */
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            color: #388e3c; /* Medium green for labels */
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #c8e6c9; /* Light green border */
+            border-radius: 5px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: #66bb6a; /* Bright green border on focus */
+            box-shadow: 0 0 5px rgba(102, 187, 106, 0.5);
+        }
+
+        .btn {
+            background-color: #4caf50; /* Primary green button */
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #388e3c; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-card">
+        <h1>SignUp</h1>
+        <form action="/signup" method="POST">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn">SignUp</button>
+        </form>
+    </div>
+</body>
+</html>
