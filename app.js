@@ -56,3 +56,5 @@ app.get('/todo-view', isAuthenticated, (req, res) => {
         });
     });
 });
+
+app.use(express.static('public'));

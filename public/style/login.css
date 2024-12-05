@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9; /* Soft green background */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.login-card img {
+display: block;
+margin: 0 auto 20px; /* Center alignment and spacing */
+width: 100px; /* Adjust size as needed */
+}
+
+
+.login-card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h1 {
+    color: #2e7d32; /* Dark green for the title */
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #388e3c; /* Medium green for labels */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #c8e6c9; /* Light green border */
+    border-radius: 5px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #66bb6a; /* Bright green border on focus */
+    box-shadow: 0 0 5px rgba(102, 187, 106, 0.5);
+}
+
+.btn {
+    background-color: #4caf50; /* Primary green button */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+p {
+    margin-top: 15px;
+    color: #388e3c;
+}
+
+a {
+    color: #2e7d32;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
